@@ -1,0 +1,34 @@
+# import pandas as pd
+# movie=pd.read_csv(r"C:\Users\amanb\Downloads\imdb-top-1000.csv")
+# df=pd.DataFrame(movie)
+# df=df.head(2)
+# print(df)
+# df=df.tail()
+"""find most eraning movie"""
+# dff=df.groupby("Genre")["Gross"].sum().sort_values(ascending=False).head(3)
+# print(dff)
+"""find the highest rated movie of each genre movie"""
+# dff=df.groupby("Genre")["IMDB_Rating"].mean().sort_values(ascending=False).head(1)
+
+"""find director with most populer"""
+# dff=df.groupby("Director")["No_of_Votes"].sum().sort_values(ascending=False).head(3)
+
+"""find the number of movie done by each actor"""
+# dff=df.groupby("Star1")["Series_Title"].count().sort_values(ascending=False)
+"""Get_Group"""
+# dff=df.groupby("Genre")
+# Horrr_list=dff.get_group("Horror")
+# print(Horrr_list)
+"""agg function"""
+#dff=df.groupby("Genre").agg(
+# {"Runtime":"mean",
+#  "IMDB_Rating":"mean",
+#  "No_of_Votes":"sum",
+#  "Gross":"sum"})
+# print(dff)
+
+"""passing_list"""
+# dff = df.groupby("Genre").agg(["min", "max","sum"])
+# print(dff)
+
+
